@@ -7,7 +7,7 @@ class InteractiveRecord
     self.to_s.downcase.pluralize
   end
 
-  def self.column_name
+  def self.column_names
     DB[:conn].results_as_hash = true
     column_data = []
 
