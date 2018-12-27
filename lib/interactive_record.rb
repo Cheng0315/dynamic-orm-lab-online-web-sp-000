@@ -34,6 +34,6 @@ class InteractiveRecord
 
     self.class.column_names.each {|col_name| values << "'#{send(col_name)}'" unless send(col_name).nil?}
 
-    values
+    values.join(", ")
   end
 end
