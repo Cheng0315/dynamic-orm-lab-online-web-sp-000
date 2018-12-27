@@ -58,7 +58,7 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attri)
+  def self.find_by(attri: attri)
     #DB[:conn].results_as_hash = true
 
     sql = <<-SQL
