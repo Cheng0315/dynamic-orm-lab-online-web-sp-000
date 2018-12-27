@@ -59,7 +59,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attri)
-    key = attri.collect {|k, v| k}.join("")
+    key = attri.collect {|k, v| k.to_s}.join("")
     #DB[:conn].results_as_hash = true
 
     sql = <<-SQL
