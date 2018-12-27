@@ -3,11 +3,11 @@ require 'active_support/inflector'
 
 class InteractiveRecord
 
-  def self.table_name
+  def table_name
     self.to_s.downcase.plurals
   end
 
-  def self.column_name
+  def column_name
     DB[:conn].results_as_hash = true
     column_data = []
 
