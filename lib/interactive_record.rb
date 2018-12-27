@@ -22,6 +22,6 @@ class InteractiveRecord
   end
 
   def initialize(options: {})
-    self.options.each {|key, value| self.send("#{key}=", value)}
+    options.each {|key, value| self.send("#{key}=", value)}
   end
 end
