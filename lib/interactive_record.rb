@@ -67,7 +67,7 @@ class InteractiveRecord
       WHERE #{attri.to_s} = ?
     SQL
 
-    DB[:conn].execute(sql, attri: attri)
+    DB[:conn].execute(sql, attri)
   end
 
 end
