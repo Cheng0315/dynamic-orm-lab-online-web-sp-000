@@ -59,15 +59,16 @@ class InteractiveRecord
   end
 
   def self.find_by(attri)
+    key = attri.collect {|k, v| k}.join("")
     DB[:conn].results_as_hash = true
 
     sql = <<-SQL
       SELECT *
       FROM #{table_name}
-      WHERE #{attri[:attri]} = ?
+      WHERE #{key} = ?
     SQL
 
-    DB[:conn].execute(sql, attri)
+    DB[:conn].execute(sql, attri: attri)
   end
 
 end
