@@ -18,7 +18,7 @@ class InteractiveRecord
   end
 
   self.column_names.each {|name| attr_accessor name.to_sym}
-
+binding.pry
   def initialize(options = {})
     options.each {|key, value| self.send("#{key}=", value)}
   end
