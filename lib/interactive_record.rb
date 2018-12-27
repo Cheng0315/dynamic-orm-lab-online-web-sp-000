@@ -64,7 +64,7 @@ class InteractiveRecord
     sql = <<-SQL
       SELECT *
       FROM #{table_name}
-      WHERE #{attri.to_s} = ?
+      WHERE #{attri:} = ?
     SQL
 
     DB[:conn].execute(sql, attri: attri)
