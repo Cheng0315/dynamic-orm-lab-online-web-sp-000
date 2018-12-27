@@ -18,8 +18,6 @@ class InteractiveRecord
     column_data.compact
   end
 
-  self.column_names.each {|name| attr_accessor name.to_sym}
-
   def initialize(options = {})
     options.each {|key, value| self.send("#{key}=", value)}
   end
