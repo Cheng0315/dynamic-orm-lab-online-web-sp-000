@@ -20,6 +20,6 @@ class InteractiveRecord
   self.column_names.each {|name| attr_accessor name.to_sym}
 
   def initialize(options = {})
-    options.each {|key, value| self.send("#{key}=", value)}
+    options.each {|key, value| self.class.send("#{key}=", value)}
   end
 end
