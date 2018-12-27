@@ -12,7 +12,7 @@ class InteractiveRecord
     column_data = []
 
     sql = "PRAGMA table_info('#{table_name}')"
-    DB[:conn].execute(sql).each {|o| column_data << o[:name]}
+    DB[:conn].execute(sql).each {|o| column_data << o["name"]}
 
     column_data.compact
   end
