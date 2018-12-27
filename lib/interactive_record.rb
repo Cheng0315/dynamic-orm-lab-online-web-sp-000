@@ -54,6 +54,8 @@ class InteractiveRecord
       FROM #{table_name_for_insert}
       WHERE name = #{name}
     SQL
+
+    DB[:conn].execute(sql)
   end
 
 end
