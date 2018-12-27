@@ -52,10 +52,10 @@ class InteractiveRecord
     sql = <<-SQL
       SELECT *
       FROM #{table_name}
-      WHERE name = #{name}
+      WHERE name = ?
     SQL
 
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, "#{name}")
   end
 
 end
