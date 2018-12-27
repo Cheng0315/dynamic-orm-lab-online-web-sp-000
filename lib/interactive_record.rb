@@ -64,10 +64,10 @@ class InteractiveRecord
     sql = <<-SQL
       SELECT *
       FROM #{table_name}
-      WHERE #{attri.to_s} = ?
+      WHERE ? = ?
     SQL
 
-    DB[:conn].execute(sql, attri: attri)
+    DB[:conn].execute(sql, attri.to_s, attri: attri)
   end
 
 end
