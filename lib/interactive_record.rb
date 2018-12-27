@@ -60,7 +60,7 @@ class InteractiveRecord
 
   def self.find_by(attri)
     DB[:conn].results_as_hash = true
-    
+
     sql = <<-SQL
       SELECT *
       FROM #{table_name}
