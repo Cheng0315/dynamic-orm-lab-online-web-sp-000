@@ -67,7 +67,7 @@ class InteractiveRecord
       WHERE ? = ?
     SQL
 
-    DB[:conn].execute(sql, attri: attri, attri)
+    DB[:conn].execute(sql, attri.to_s, attri)
   end
 
 end
