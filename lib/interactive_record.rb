@@ -10,12 +10,16 @@ class InteractiveRecord
 
   def self.column_names
     DB[:conn].results_as_hash = true
-    column_data = []
-
     sql = "PRAGMA table_info('#{table_name}')"
-    DB[:conn].execute(sql).each {|o| column_data << o["name"]}
-
-    column_data.compact
+ 
+  table_info = DB[:conn].execute(sql)
+  column_names = []
+ 
+  table_info.each do |column|
+    column_names << column["name"]
+  end
+ 
+  column_names.compact
   end
 
   self.column_names.each {|name| attr_accessor name.to_sym}
