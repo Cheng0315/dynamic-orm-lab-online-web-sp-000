@@ -52,7 +52,7 @@ class InteractiveRecord
     sql = <<-SQL
       SELECT *
       FROM #{table_name_for_insert}
-      WHERE #{table_name_for_insert}.name = "#{name}"
+      WHERE #{table_name_for_insert}.name = #{name}
     SQL
 
     DB[:conn].execute(sql)
