@@ -59,13 +59,7 @@ class InteractiveRecord
   end
 
   def self.find_by(attri)
-    sql = <<-SQL
-      SELECT *
-      FROM #{table_name}
-      WHERE #{table_name}.#{attri} = ?
-    SQL
-
-    DB[:conn].execute(sql, attri)
+    
   end
 
 end
