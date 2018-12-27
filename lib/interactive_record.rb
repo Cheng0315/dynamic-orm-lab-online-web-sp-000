@@ -58,9 +58,9 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attri)
-    key = attri.collect {|k, v| k.to_s}.join("")
-    value = attri.collect {|k, v| v}.join("")
+  def self.find_by(attribute)
+    key = attribute.collect {|k, v| k.to_s}.join("")
+    value = attribute.collect {|k, v| v}.join("")
 
     sql = <<-SQL
       SELECT *
