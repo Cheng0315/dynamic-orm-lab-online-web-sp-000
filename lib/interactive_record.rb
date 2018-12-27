@@ -63,7 +63,7 @@ class InteractiveRecord
       SELECT *
       FROM #{table_name}
       WHERE #{table_name}.#{attri} = ?
-    SQl
+    SQL
 
     DB[:conn].execute(sql, attri)
   end
